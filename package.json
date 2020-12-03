@@ -1,0 +1,11 @@
+{
+  "name": "news-widget",
+  "version": "1.0.0",
+  "description": "test task",
+  "main": "",
+  "scripts": {},
+  "author": "Akzhar Taov",
+  "license": "ISC",
+  "dependencies": {
+  }
+}

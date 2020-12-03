@@ -1,0 +1,6 @@
+# Ignore files
+.eslintrc.json
+package-lock.json
+# Ignore folders
+node_modules/
+gulp_tasks/
