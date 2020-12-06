@@ -10,9 +10,12 @@
 			widgetIcon: 'widget-icon',
 			widgetIconCounter: 'widget-icon-counter',
 			list: 'list',
+			article: 'article-',
+			articleLink: 'articleLink-',
 			btnClose: 'btn-close'
 		},
 		class: {
+			hide: 'hide',
 			widget: 'widget',
 			widgetIcon: 'widget-icon',
 			widgetIconCounter: 'widget-icon__counter',
@@ -25,6 +28,7 @@
 			articleAuthor: 'article__author',
 			articleLink: 'article__link'
 		},
+		regexp: { articleLinkId: /^articleLink-\d+$/ },
 		timeout: 5000,
 		status: { ok: 200 },
 		msg: {
@@ -33,7 +37,7 @@
 			timeout: 'Request exceeded the maximum time limit'
 		},
 		url: {
-			news: 'data/news.json',
+			news: 'https://raw.githubusercontent.com/akzhar/news-widget/main/src/data/news.json', // 'data/news.json',
 			fonts: 'https://fonts.googleapis.com/css2?family=Oswald&display=swap',
 			styles: 'css/widget.min.css',
 			svg: 'img/sprite.min.svg',

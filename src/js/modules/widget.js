@@ -20,10 +20,10 @@
 		}
 
 		onLoad(data) {
+			debugger;
 			const news = JSON.parse(data);
 			this.news = news;
 			this.unreadCount = news.length;
-			// отрисовка виджета возможна только после загрузки и templates и данных
 			this.render();
 			this.addListeners();		
 		}
@@ -31,9 +31,9 @@
 		render() {
 			// если браузер поддерживает тег <template>
 			if ('content' in document.createElement('template')) {
-				render.widgetModern(this.news);
+				render.renderUsingTemplates(this.news);
 			} else {
-				render.widgetIE(this.news);
+				render.renderWidget(this.news);
 				render.removeTemplates(this.news);
 			}
 		}
@@ -42,15 +42,15 @@
 			document.querySelector(`#${CONFIG.id.widgetIcon}`).addEventListener('click', this.show);
 			document.querySelector(`#${CONFIG.id.btnClose}`).addEventListener('click', this.hide);
 			document.querySelector(`#${CONFIG.id.list}`).addEventListener('click', (evt) => {
-				if (evt.target.tagName === 'A' && evt.target.textContent === 'Подробнее') this.onNewsLinkClick(evt.target.id);
+				if (evt.target.tagName === 'A' && CONFIG.regexp.articleLinkId.test(evt.target.id)) this.onArticleLinkClick(evt.target.id);
 			});
 			window.addEventListener('keydown', (evt) => {
 				if (evt.key === 'Escape' || evt.key === 'Esc') this.hide();
 			});
 		}
 
-		onNewsLinkClick(linkId) {
-			const id = Widget.getNewsIdByLinkId(linkId);
+		onArticleLinkClick(linkId) {
+			const id = Widget.getNewsIdByArticleLinkId(linkId);
 			if (!this.news[id].isRead) {
 				this.news[id].isRead = true;
 				this.unreadCount--;
@@ -64,10 +64,9 @@
 
 		hide() { render.hideWidget(); }
 
-		static getNewsIdByLinkId(id) { return +id.slice(id.indexOf('-') + 1, id.length); }
+		static getNewsIdByArticleLinkId(id) { return +id.slice(id.indexOf('-') + 1, id.length); }
 
-		static getArticleIdByNewsId(id) { return `#news-${id}`; }
-
+		static getArticleIdByNewsId(id) { return `#${CONFIG.id.article}${id}`; }
 	}
 
 	window.exports.Widget = Widget;

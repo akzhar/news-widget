@@ -94,7 +94,7 @@ lazyRequireTask('js', './gulp_tasks/js.js', {
 		`${ADDRESS.temp}index.js`
 	],
 	dest: `${ADDRESS.build.js}`,
-	bundleName: 'widget'
+	bundleName: 'news-widget'
 });
 
 lazyRequireTask('eslint', './gulp_tasks/eslint.js', {

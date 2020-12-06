@@ -17,15 +17,15 @@
 
 	const onSpriteLoad = (data) => {
 		const div = document.createElement('div');
-		div.style = 'display: none;';
+		div.classList.add(CONFIG.class.hide);
 		div.innerHTML = data;
 		document.body.appendChild(div);
 	};
 
 	const onTemplatesLoad = (data) => {
 		const div = document.createElement('div');
+		div.classList.add(CONFIG.class.hide);
 		div.id = 'templates';
-		div.style = 'display: none;';
 		div.innerHTML = data;
 		document.body.appendChild(div);
 	};
