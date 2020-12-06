@@ -37,7 +37,7 @@
 			timeout: 'Request exceeded the maximum time limit'
 		},
 		url: {
-			news: 'https://raw.githubusercontent.com/akzhar/news-widget/main/src/data/news.json', // 'data/news.json',
+			news: 'data/news.json',
 			fonts: 'https://fonts.googleapis.com/css2?family=Oswald&display=swap',
 			styles: 'css/widget.min.css',
 			svg: 'img/sprite.min.svg',
