@@ -20,7 +20,6 @@
 		}
 
 		onLoad(data) {
-			debugger;
 			const news = JSON.parse(data);
 			this.news = news;
 			this.unreadCount = news.length;
