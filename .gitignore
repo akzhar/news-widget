@@ -4,3 +4,5 @@ package-lock.json
 # Ignore folders
 node_modules/
 gulp_tasks/
+temp/
+build/

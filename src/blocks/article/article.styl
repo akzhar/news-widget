@@ -1,0 +1,78 @@
+.article
+	display flex
+	flex-direction column
+	position relative
+	padding 15px
+	background-color white
+	font-size 0.8rem	
+
+	&--read
+		opacity 0.6
+
+	&__header
+		width 90%
+		margin 0 0 14px 0
+		font-size 1rem
+		line-height 1.4rem
+		color color__main
+		
+	&__icon
+		display flex
+		justify-content center
+		align-items center
+
+		& svg
+			width 1rem
+			height 1rem
+			fill color__main--light
+
+	&__icon--number,
+	&__icon--read
+		position absolute
+		width 20px
+		height 20px
+		background-color color__main
+		color white
+
+		& svg 
+			fill white
+
+	&__icon--number
+		top 0
+		right 0
+
+	&__icon--read
+		display none
+		bottom 0
+		left 0
+
+		&--show
+			display flex
+
+	&__info
+		display flex
+		align-items center
+		margin 0 0 14px 0
+
+		& .article__icon
+			margin 0 5px 0 40px
+
+			&:first-child
+				margin-left 0
+
+	&__link
+		align-self flex-end
+		text-transform uppercase
+		color color__main--light
+
+		&:hover
+			color color__main
+
+		&:active
+			opacity 0.8
+
+@media(min-width: width__desktop)
+	.article
+	
+		&__header
+			width 100%

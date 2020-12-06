@@ -1,0 +1,52 @@
+.widget-icon
+	position fixed
+	display flex
+	justify-content center
+	align-items center
+	bottom 10px
+	right 10px
+	width 1.6rem
+	height 1.6rem
+	border-radius 50%
+	background-color color__main--light
+	font-family font__widget, Arial, sans-serif
+	visibility hidden
+
+	&--show
+		visibility visible
+
+	&__counter
+		position absolute
+		top -0.4rem
+		left -0.6rem
+		width 1rem
+		height 1rem
+		background-color color__sub--light
+		border-radius 50%
+		font-size 0.6rem
+		line-height 1rem
+		text-align center
+		color white
+		visibility inherit
+
+		&--hide
+			visibility hidden
+
+	&--animate
+		animation-shake(8s)
+
+	& svg
+		width 1rem
+		height 1rem
+		fill white
+
+	&:hover
+		cursor pointer
+		background-color color__main
+
+		& .widget-icon__counter 
+			background-color color__sub
+
+	&:active
+		transform translateY(2px)
+		opacity 0.8

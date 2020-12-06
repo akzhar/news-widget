@@ -1,0 +1,7 @@
+include ../list/list.pug
+include ../btn-close/btn-close.pug
+
+mixin widget()
+	div.widget(id='widget')
+		+list()
+		+btn-close()

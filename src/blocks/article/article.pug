@@ -1,0 +1,18 @@
+mixin article()
+	article.article
+		div.article__icon.article__icon--number
+			span
+		div.article__icon.article__icon--read(title='Read')
+			svg(width='14', height='14')
+				use(xlink:href='#view')
+		header.article__header
+		div.article__info
+			div.article__icon(title='Published')
+				svg(width='14', height='14')
+					use(xlink:href='#clock')
+			datetime.article__datetime
+			div.article__icon(title='Author')
+				svg(width='14', height='14')
+					use(xlink:href='#user')
+			span.article__author
+		a.article__link(href='', target='_blank') Подробнее

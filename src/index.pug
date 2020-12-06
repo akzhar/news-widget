@@ -1,0 +1,18 @@
+doctype html
+html(lang='ru')
+	head
+		title Widget demo page
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+		meta(charset='utf-8')
+		link(rel='icon', href='img/favicon.png', type='image/png')
+		link(rel='stylesheet', href='css/style.min.css')
+	body
+		main.main
+			h1 Widget demo page
+			p
+				| Click on the bell icon [
+				svg(width='14', height='14')
+					use(xlink:href='#bell')
+				|] in the right bottom edge of the page
+		script(src='js/widget.min.js')
